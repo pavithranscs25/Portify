@@ -1,0 +1,114 @@
+@import "tailwindcss";
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  background: #09090b;
+  color: #fafafa;
+  font-family: Inter, system-ui, sans-serif;
+}
+
+button,
+input,
+textarea {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+::selection {
+  background: #8b5cf6;
+  color: white;
+}
+
+.builder-input {
+  width: 100%;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  background: #09090f;
+  padding: 13px 15px;
+  color: white;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.builder-input:focus {
+  border-color: #8b5cf6;
+}
+
+.builder-input::placeholder {
+  color: #6b7280;
+}
+
+@keyframes portfolio-enter {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.portfolio-modern-hero {
+  animation: portfolio-enter 650ms ease-out both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .portfolio-modern-hero {
+    animation: none;
+  }
+}
+
+@media print {
+  @page {
+    size: A4;
+    margin: 12mm;
+  }
+
+  body {
+    background: white !important;
+    color: black !important;
+  }
+
+  .no-print {
+    display: none !important;
+  }
+
+  .portfolio-document {
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
+    padding: 0;
+    box-shadow: none !important;
+  }
+
+  .portfolio-document section,
+  .portfolio-document article,
+  .portfolio-document footer {
+    break-inside: avoid-page;
+    page-break-inside: avoid;
+  }
+
+  .portfolio-document a {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  * {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+}

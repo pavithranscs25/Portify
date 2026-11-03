@@ -1,0 +1,12 @@
+node_modules/
+dist/
+dist-ssr/
+.env
+.env.*
+!.env.example
+*.log
+
+# Local AI tooling guidance is not part of the application source.
+backend/.agents/
+backend/.claude/
+backend/.windsurf/
